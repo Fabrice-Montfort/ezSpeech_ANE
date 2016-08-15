@@ -9,7 +9,7 @@ Documentation is available in the "doc" folder.
 
 A sample project for Flex is available in the "example" folder.
 
-For a full version without toasts shwing "EZSPEECH DEMO", please visit the product page and buy a licence.
+For a full version without toasts showing "EZSPEECH DEMO", please visit the product page and buy a licence.
 
 <a href="http://fabricemontfort.com/product/ezspeech-ane-air-native-extension/">Get more info and pricing</a>
 
