@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark">
+	
+	<s:layout>
+		<s:VerticalLayout gap="20" padding="50"/>
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.fabricemontfort.air.ezSpeech;
+			
+			protected function buttonSpeak_clickHandler(event:MouseEvent):void
+			{
+				ezSpeech.instance.say("This is a test");
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Button id="buttonSpeak" width="100%" label="Speak to me" click="buttonSpeak_clickHandler(event)"/>
+	
+</s:Application>
