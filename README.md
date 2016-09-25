@@ -1,4 +1,5 @@
 # ezSpeech_ANE
+
 ezSpeech ANE : AIR Native Extension for Text To Speech (TTS)
 
 You can download and use this free version of ezSpeech in your developments.
@@ -28,7 +29,7 @@ A sample project for Flex is available in the "example" folder.
 
 For a full version without toasts showing "EZSPEECH DEMO", please visit the product page and buy a licence.
 
-<a href="http://fabricemontfort.com/product/ezspeech-ane-air-native-extension/">Get more info and pricing</a>
+<a href="http://fabricemontfort.com/product/ezspeech-ane-air-native-extension/">Get more info, tutorial and pricing</a>
 
 ## Updates
 
