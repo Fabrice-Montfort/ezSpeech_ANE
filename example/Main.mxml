@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   creationComplete="application1_creationCompleteHandler(event)">
+	
+	<s:layout>
+		<s:VerticalLayout gap="10" padding="20"/>
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.fabricemontfort.air.ezSpeech;
+			import com.fabricemontfort.air.ezspeech.events;
+			import com.fabricemontfort.air.ezspeech.languages;
+			
+			import mx.events.FlexEvent;
+			
+			private var tts:ezSpeech;
+			
+			[Bindable]
+			private var tts_speed:Number = 0.54;
+			
+			[Bindable]
+			private var ezspeech_state:String = "NOT TALKING";
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				this.tts = ezSpeech.instance;
+				this.tts.debug = true;
+				if (this.tts.isSupported()) {
+					this.tts.addEventListener(events.START, onUtteranceStart);
+					this.tts.addEventListener(events.DONE, onUtteranceDone);
+					this.tts.setSpeed(this.tts_speed);
+					this.tts.say("Let's go!");
+				}
+				return;
+			}
+			
+			protected function frButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.FR);
+				if (this.tts.isSupported()){
+					this.tts.say("Salut. Ceci est un exemple d'application pour démontrer la puissance de la parole. J'espère que vous aimerez !");
+				}
+				return;
+			}
+			
+			protected function enButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.US);
+				if (this.tts.isSupported()){
+					this.tts.say("Hello. This is a sample application to demonstrate the power of the speech. I hope that you'll like it!");
+				}
+				return;
+			}
+			
+			protected function deButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.DE);
+				if (this.tts.isSupported()){
+					this.tts.say("Hallo. Dies ist eine Beispielanwendung, die Macht der Sprache zu demonstrieren. Ich hoffe, dass Sie es finden mögen!");
+				}
+				return;
+			}
+			
+			protected function esButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.ES);
+				if (this.tts.isSupported()){
+					this.tts.say("Hola. Esta es una aplicación de ejemplo para demostrar el poder del discurso. Espero que te guste!");
+				}
+				return;
+			}
+			
+			protected function itButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.IT);
+				if (this.tts.isSupported()){
+					this.tts.say("Ciao. Questa è un'applicazione di esempio per dimostrare il potere del discorso. Spero che vi piacerà!");
+				}
+				return;
+			}
+			
+			protected function zhButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.ZH);
+				if (this.tts.isSupported()){
+					this.tts.say("你好。这是一个示例应用程序来演示说话的能力。我希望你会喜欢它！");
+				}
+				return;
+			}
+			
+			protected function jaButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.JA);
+				if (this.tts.isSupported()){
+					this.tts.say("こんにちは。これは、音声のパワーを実証するサンプル・アプリケーションです。私はあなたがそれを好むだろうことを願っています！");
+				}
+				return;
+			}
+			
+			protected function ruButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.RU);
+				if (this.tts.isSupported()){
+					this.tts.say("Здравствуйте. Это пример приложения, чтобы продемонстрировать силу речи. Я надеюсь, что вам понравится!");
+				}
+				return;
+			}
+			
+			protected function koButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.KO);
+				if (this.tts.isSupported()){
+					this.tts.say("여보세요. 이 연설의 힘을 보여주는 샘플 응용 프로그램입니다. 나는 당신이 그것을 좋아합니다 희망!");
+				}
+				return;
+			}
+			
+			protected function ptButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.PT);
+				if (this.tts.isSupported()){
+					this.tts.say("Olá. Esta é uma aplicação de exemplo para demonstrar o poder do discurso. Eu espero que você vai gostar!");
+				}
+				return;
+			}
+			
+			protected function csButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.CS);
+				if (this.tts.isSupported()){
+					this.tts.say("Ahoj. Toto je vzorová aplikace demonstrovat sílu projevu. Doufám, že se vám bude líbit!");
+				}
+				return;
+			}
+			
+			protected function nlButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.NL);
+				if (this.tts.isSupported()){
+					this.tts.say("Hallo. Dit is een voorbeeld applicatie om de kracht van de toespraak aan te tonen. Ik hoop dat het je bevalt!");
+				}
+				return;
+			}
+			protected function plButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.PL);
+				if (this.tts.isSupported()){
+					this.tts.say("Cześć. To jest przykładowa aplikacja zademonstrować potęgę mowy. Mam nadzieję, że Ci się spodoba!");
+				}
+				return;
+			}
+			
+			protected function svButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.SV);
+				if (this.tts.isSupported()){
+					this.tts.say("Hallå. Detta är en exempelprogrammet för att demonstrera kraften i tal. Jag hoppas att du kommer att gilla det!");
+				}
+				return;
+			}
+			
+			protected function trButton_clickHandler(event:MouseEvent) : void {
+				this.tts.setLanguage(languages.TR);
+				if (this.tts.isSupported()){
+					this.tts.say("Merhaba. Bu konuşma gücünü göstermek için örnek bir uygulamadır. Ben bunu gibi olacak umuyoruz!");
+				}
+				return;
+			}
+			
+			protected function isSpeakingButton_clickHandler(event:MouseEvent):void
+			{
+				trace ("TALKING : " + tts.isSpeaking());
+			}
+			
+			protected function slowButton_clickHandler(event:MouseEvent):void
+			{
+				this.tts_speed = this.tts_speed - 0.01;
+				if (this.tts.isSupported()){
+					this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+				}
+				return;
+			}
+			
+			protected function fastButton_clickHandler(event:MouseEvent):void
+			{
+				this.tts_speed = this.tts_speed + 0.01;
+				if (this.tts.isSupported()){
+					this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+				}
+				return;
+			}
+			
+			protected function onUtteranceStart(event:Event):void
+			{
+				ezspeech_state = "TALKING";
+			}
+			
+			protected function onUtteranceDone(event:Event):void
+			{
+				ezspeech_state = "NOT TALKING";
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<s:Label width="100%" text="ezSpeech Demo" textAlign="center" typographicCase="uppercase" fontWeight="bold" paddingBottom="10" paddingTop="10"/>
+	
+	<s:Button id="isSpeakingButton" label="? Talking ?" width="100%" click="isSpeakingButton_clickHandler(event)"/>
+	
+	<s:HGroup gap="10" width="100%" padding="10" verticalAlign="middle">
+		<s:Button id="slowButton" label="- 0.01 -" width="30%" click="slowButton_clickHandler(event)"/>
+		<s:Label text="{tts_speed}" width="40%" textAlign="center"/>
+		<s:Button id="fastButton" label="+ 0.01 +" width="30%" click="fastButton_clickHandler(event)"/>
+	</s:HGroup>
+	
+	<s:Label text="{ezspeech_state}" width="100%" textAlign="center" paddingBottom="10" paddingTop="10"/>
+	
+	<s:Scroller width="100%" height="100%" horizontalScrollPolicy="off" verticalScrollPolicy="auto">
+		<s:VGroup gap="10" padding="10">
+			<s:Button id="frButton" width="100%" label="French" click="frButton_clickHandler(event)"/>
+			<s:Button id="enButton" width="100%" label="English" click="enButton_clickHandler(event)"/>
+			<s:Button id="deButton" width="100%" label="German" click="deButton_clickHandler(event)"/>
+			<s:Button id="esButton" width="100%" label="Spanish" click="esButton_clickHandler(event)"/>
+			<s:Button id="itButton" width="100%" label="Italian" click="itButton_clickHandler(event)"/>
+			<s:Button id="zhButton" width="100%" label="Chinese" click="zhButton_clickHandler(event)"/>
+			<s:Button id="jaButton" width="100%" label="Japanese" click="jaButton_clickHandler(event)"/>
+			<s:Button id="ruButton" width="100%" label="Russian" click="ruButton_clickHandler(event)"/>
+			<s:Button id="koButton" width="100%" label="Korean" click="koButton_clickHandler(event)"/>
+			<s:Button id="ptButton" width="100%" label="Portuguese" click="ptButton_clickHandler(event)"/>
+			<s:Button id="csButton" width="100%" label="Czech" click="csButton_clickHandler(event)"/>
+			<s:Button id="nlButton" width="100%" label="Dutch" click="nlButton_clickHandler(event)"/>
+			<s:Button id="plButton" width="100%" label="Polish" click="plButton_clickHandler(event)"/>
+			<s:Button id="svButton" width="100%" label="Swedish" click="svButton_clickHandler(event)"/>
+			<s:Button id="trButton" width="100%" label="Turkish" click="trButton_clickHandler(event)"/>
+		</s:VGroup>
+	</s:Scroller>
+	
+</s:Application>
