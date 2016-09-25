@@ -33,6 +33,9 @@ For a full version without toasts showing "EZSPEECH DEMO", please visit the prod
 ## Updates
 
 1.0.4 - Adding Utterance Events : START, DONE, ERROR
+
 1.0.3 - Adding isSpeaking function to let you know if TTS is talking or not
+
 1.0.1 - Adding languages : Chinese, Japanese, Russian, Korean, Portuguese, Czech, Dutch, Polish, Swedish, Turkish
+
 1.0.0 - First public release
