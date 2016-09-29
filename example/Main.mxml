@@ -30,8 +30,9 @@
 				if (this.tts.isSupported()) {
 					this.tts.addEventListener(events.START, onUtteranceStart);
 					this.tts.addEventListener(events.DONE, onUtteranceDone);
-					this.tts.setSpeed(this.tts_speed);
-					this.tts.say("Let's go!");
+					this.tts.addEventListener(events.ERROR, onUtteranceError);
+					this.tts.addEventListener(events.INITIALIZED, onTTSInitialized);
+					this.tts.addEventListener(events.NOT_INITIALIZED, onTTSNotInitialized);
 				}
 				return;
 			}
@@ -178,6 +179,13 @@
 				return;
 			}
 			
+			protected function stopButton_clickHandler(event:MouseEvent):void
+			{
+				if (this.tts.isSupported()) {
+					tts.stop();
+				}
+			}
+			
 			protected function onUtteranceStart(event:Event):void
 			{
 				ezspeech_state = "TALKING";
@@ -188,12 +196,33 @@
 				ezspeech_state = "NOT TALKING";
 			}
 			
+			protected function onUtteranceError(event:Event):void
+			{
+				trace ("Unknown error with Utterance");
+			}
+			
+			protected function onTTSInitialized(event:Event):void
+			{
+				if (tts.isSupported()) {
+					this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+					this.tts.setLanguage(languages.US);
+					this.tts.say("Let's go");
+				}
+			}
+			
+			protected function onTTSNotInitialized(event:Event):void
+			{
+				trace ("This device does not support TTS. An unknown error occured during initialization");
+			}
+			
 		]]>
 	</fx:Script>
 	
 	<s:Label width="100%" text="ezSpeech Demo" textAlign="center" typographicCase="uppercase" fontWeight="bold" paddingBottom="10" paddingTop="10"/>
 	
 	<s:Button id="isSpeakingButton" label="? Talking ?" width="100%" click="isSpeakingButton_clickHandler(event)"/>
+	
+	<s:Button id="stopButton" label="STOP UTTERANCE" width="100%" click="stopButton_clickHandler(event)"/>
 	
 	<s:HGroup gap="10" width="100%" padding="10" verticalAlign="middle">
 		<s:Button id="slowButton" label="- 0.01 -" width="30%" click="slowButton_clickHandler(event)"/>
