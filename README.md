@@ -32,6 +32,7 @@ For a full version without toasts showing "EZSPEECH DEMO", please visit the prod
 <a href="http://fabricemontfort.com/product/ezspeech-ane-air-native-extension/">Get more info, tutorial and pricing</a>
 
 ## Updates
+1.0.8 - Adding setPitch and forceLanguage functions
 
 1.0.4 - Adding Utterance Events : START, DONE, ERROR
 
