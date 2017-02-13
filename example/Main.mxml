@@ -21,6 +21,9 @@
 			private var tts_speed:Number = 0.54;
 			
 			[Bindable]
+			private var tts_pitch:Number = 1;
+			
+			[Bindable]
 			private var ezspeech_state:String = "NOT TALKING";
 			
 			protected function application1_creationCompleteHandler(event:FlexEvent):void
@@ -156,6 +159,46 @@
 				return;
 			}
 			
+			protected function heButton_clickHandler(event:MouseEvent) : void {
+				this.tts.forceLanguage("bn_BD");
+				if (this.tts.isSupported()){
+					this.tts.say("হাই. এই বাক শক্তি প্রদর্শন করার জন্য একটি নমুনা অ্যাপ্লিকেশন. আমি আশা করি আপনি ভোগ!");
+				}
+				return;
+			}
+			
+			protected function daButton_clickHandler(event:MouseEvent) : void {
+				this.tts.forceLanguage("da_DK");
+				if (this.tts.isSupported()){
+					this.tts.say("Hej. Dette er en prøve, for at påvise talens. Jeg håber du nyder!");
+				}
+				return;
+			}
+			
+			protected function arButton_clickHandler(event:MouseEvent) : void {
+				this.tts.forceLanguage("ar");
+				if (this.tts.isSupported()){
+					this.tts.say("سلام. هذا هو تطبيق عينة لإثبات القدرة على الكلام. وآمل أن تستمتع!");
+				}
+				return;
+			}
+			
+			protected function iwButton_clickHandler(event:MouseEvent) : void {
+				this.tts.forceLanguage("he");
+				if (this.tts.isSupported()){
+					this.tts.say("היי. זהו יישום מדגם כדי להדגים את יכולת הדיבור. אני מקווה שאתה נהנה!");
+				}
+				return;
+			}
+			
+			protected function swButton_clickHandler(event:MouseEvent) : void {
+				this.tts.forceLanguage("sw");
+				if (this.tts.isSupported()){
+					this.tts.say("Hi. Hii ni maombi ya sampuli kuonyesha nguvu ya hotuba. Natumaini kufurahia!");
+				}
+				return;
+			}
+			
 			protected function isSpeakingButton_clickHandler(event:MouseEvent):void
 			{
 				trace ("TALKING : " + tts.isSpeaking());
@@ -205,6 +248,7 @@
 			{
 				if (tts.isSupported()) {
 					this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+					this.tts.setPitch(Number(this.tts_pitch.toFixed(2)));
 					this.tts.setLanguage(languages.US);
 					this.tts.say("Let's go");
 				}
@@ -213,6 +257,24 @@
 			protected function onTTSNotInitialized(event:Event):void
 			{
 				trace ("This device does not support TTS. An unknown error occured during initialization");
+			}
+			
+			protected function deepButton_clickHandler(event:MouseEvent):void
+			{
+				this.tts_pitch = this.tts_pitch - 0.01;
+				if (this.tts.isSupported()){
+					this.tts.setPitch(Number(this.tts_pitch.toFixed(2)));
+				}
+				return;
+			}
+			
+			protected function acuteButton_clickHandler(event:MouseEvent):void
+			{
+				this.tts_pitch = this.tts_pitch + 0.01;
+				if (this.tts.isSupported()){
+					this.tts.setPitch(Number(this.tts_pitch.toFixed(2)));
+				}
+				return;
 			}
 			
 		]]>
@@ -224,10 +286,20 @@
 	
 	<s:Button id="stopButton" label="STOP UTTERANCE" width="100%" click="stopButton_clickHandler(event)"/>
 	
+	<s:Label text="SPEED" width="100%" textAlign="center" paddingBottom="0" paddingTop="10"/>
+	
 	<s:HGroup gap="10" width="100%" padding="10" verticalAlign="middle">
 		<s:Button id="slowButton" label="- 0.01 -" width="30%" click="slowButton_clickHandler(event)"/>
 		<s:Label text="{tts_speed}" width="40%" textAlign="center"/>
 		<s:Button id="fastButton" label="+ 0.01 +" width="30%" click="fastButton_clickHandler(event)"/>
+	</s:HGroup>
+	
+	<s:Label text="PITCH" width="100%" textAlign="center" paddingBottom="0" paddingTop="10"/>
+	
+	<s:HGroup gap="10" width="100%" padding="10" verticalAlign="middle">
+		<s:Button id="deepButton" label="- 0.01 -" width="30%" click="deepButton_clickHandler(event)"/>
+		<s:Label text="{tts_pitch}" width="40%" textAlign="center"/>
+		<s:Button id="acuteButton" label="+ 0.01 +" width="30%" click="acuteButton_clickHandler(event)"/>
 	</s:HGroup>
 	
 	<s:Label text="{ezspeech_state}" width="100%" textAlign="center" paddingBottom="10" paddingTop="10"/>
@@ -249,6 +321,11 @@
 			<s:Button id="plButton" width="100%" label="Polish" click="plButton_clickHandler(event)"/>
 			<s:Button id="svButton" width="100%" label="Swedish" click="svButton_clickHandler(event)"/>
 			<s:Button id="trButton" width="100%" label="Turkish" click="trButton_clickHandler(event)"/>
+			<s:Button id="heButton" width="100%" label="Bengali (Experimental)" click="heButton_clickHandler(event)"/>
+			<s:Button id="daButton" width="100%" label="Danish (Experimental)" click="daButton_clickHandler(event)"/>
+			<s:Button id="arButton" width="100%" label="Arabic (Experimental)" click="arButton_clickHandler(event)"/>
+			<s:Button id="iwButton" width="100%" label="Hebrew (Experimental)" click="iwButton_clickHandler(event)"/>
+			<s:Button id="swButton" width="100%" label="Swahili (Experimental)" click="swButton_clickHandler(event)"/>
 		</s:VGroup>
 	</s:Scroller>
 	
