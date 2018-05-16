@@ -32,6 +32,8 @@ For a full version without toasts showing "EZSPEECH DEMO", please visit the prod
 <a href="http://fabricemontfort.com/product/ezspeech-ane-air-native-extension/">Get more info, tutorial and pricing</a>
 
 ## Updates
+1.2.0 - Update to work with AIR 30 and iOS 11.3 - Bug resolved on AIR Simulator
+
 1.0.9 - Working better with ezSTT
 
 1.0.8 - Adding setPitch and forceLanguage functions
