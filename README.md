@@ -25,7 +25,7 @@ ANE file is in the "bin" folder.
 
 Documentation is available in the "doc" folder.
 
-A sample project for Flex is available in the "example" folder.
+2 sample projects for Flex and Feathers are available in the "example" folder.
 
 For a full version without toasts showing "EZSPEECH DEMO", please visit the product page and buy a licence.
 
