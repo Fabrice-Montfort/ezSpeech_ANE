@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../override.css" type="text/css"><meta name="keywords" content="ezSpeech,com.fabricemontfort.air.ezSpeech,debug,instance,forceLanguage,isSpeaking,isSupported,say,setLanguage,setPitch,setSpeed,stop"><title>com.fabricemontfort.air.ezSpeech</title></head><body><script language="javascript" type="text/javascript" src="../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../override.css" type="text/css"><meta name="keywords" content="ezSpeech,com.fabricemontfort.air.ezSpeech,debug,instance,forceLanguage,getAllVoices,isSpeaking,isSupported,say,sayWithVoiceParams,setLanguage,setPitch,setSpeed,stop"><title>com.fabricemontfort.air.ezSpeech</title></head><body><script language="javascript" type="text/javascript" src="../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
 				asdocTitle = 'ezSpeech - API Documentation';
 				var baseRef = '../../../';
 				window.onload = configPage;
@@ -11,139 +11,134 @@
 					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("ezSpeech"); titleBar_setSubNav(false,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
 				-->
 			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.fabricemontfort.air</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  ezSpeech</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">ezSpeech  <img src="../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.events.EventDispatcher</td></tr></table><p></p><p></p><p></p><p></p>
-	              <p>ezSpeech AIR Native Extension</p>
-	              <p>(c) Copyright Fabrice Montfort (2016)</p>
-	              <p>All rights reserved</p>
-	              <p>Enable TTS inside your AIR projects</p>
-	           <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#debug" class="signatureLink">debug</a> : Boolean<div class="summaryTableDescription">
-		 Get/Set the debug state of ezSpeech instance.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#instance" class="signatureLink">instance</a> : <a href="../../../com/fabricemontfort/air/ezSpeech.html">ezSpeech</a><div class="summaryTableDescription">[static] [read-only] 
-		 This method instanciate and return the current (and unique) instance of the ezSpeech class.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#ezSpeech()" class="signatureLink">ezSpeech</a>(enforcer:SingletonEnforcer)</div><div class="summaryTableDescription">
-		 This extension is based on a Singleton.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#forceLanguage()" class="signatureLink">forceLanguage</a>(lang:String):void</div><div class="summaryTableDescription">
-		 This method is EXPERIMENTAL and is used to set the language for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isSpeaking()" class="signatureLink">isSpeaking</a>():Boolean</div><div class="summaryTableDescription">
-		 This method is used to know if the TTS engine is currently speaking.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isSupported()" class="signatureLink">isSupported</a>():Boolean</div><div class="summaryTableDescription">
-		 This method is used to know if the TTS engine is available on the mobile device.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#say()" class="signatureLink">say</a>(sentence:String):void</div><div class="summaryTableDescription">
-		 This method is used to say a sentence.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setLanguage()" class="signatureLink">setLanguage</a>(lang:String):void</div><div class="summaryTableDescription">
-		 This method is used to set the language for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setPitch()" class="signatureLink">setPitch</a>(pitch:Number):void</div><div class="summaryTableDescription">
-		 This method is used to set the voice pitch for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setSpeed()" class="signatureLink">setSpeed</a>(speed:Number):void</div><div class="summaryTableDescription">
-		 This method is used to set the voice speed for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#stop()" class="signatureLink">stop</a>():void</div><div class="summaryTableDescription">
-		 This method is used to stop the TTS engine and discard other utterances in the queue.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+               <p>ezSpeech AIR Native Extension</p>
+               <p>(c) Copyright Fabrice Montfort (2016)</p>
+               <p>All rights reserved</p>
+               <p>Enable TTS inside your AIR projects</p>
+            <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#debug" class="signatureLink">debug</a> : Boolean<div class="summaryTableDescription">
+     Get/Set the debug state of ezSpeech instance.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#instance" class="signatureLink">instance</a> : <a href="../../../com/fabricemontfort/air/ezSpeech.html">ezSpeech</a><div class="summaryTableDescription">[static] [read-only] 
+     This method instanciate and return the current (and unique) instance of the ezSpeech class.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#ezSpeech()" class="signatureLink">ezSpeech</a>(enforcer:SingletonEnforcer)</div><div class="summaryTableDescription">
+     This extension is based on a Singleton.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#forceLanguage()" class="signatureLink">forceLanguage</a>(lang:String):void</div><div class="summaryTableDescription">
+     This method is EXPERIMENTAL and is used to set the language for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getAllVoices()" class="signatureLink">getAllVoices</a>():Array</div><div class="summaryTableDescription">
+     This method is used to get all voices installed on the device.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isSpeaking()" class="signatureLink">isSpeaking</a>():Boolean</div><div class="summaryTableDescription">
+     This method is used to know if the TTS engine is currently speaking.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isSupported()" class="signatureLink">isSupported</a>():Boolean</div><div class="summaryTableDescription">
+     This method is used to know if the TTS engine is available on the mobile device.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#say()" class="signatureLink">say</a>(sentence:String):void</div><div class="summaryTableDescription">
+     This method is used to say a sentence.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#sayWithVoiceParams()" class="signatureLink">sayWithVoiceParams</a>(sentence:String, identifier:String, speed:Number, pitch:Number, language:String):void</div><div class="summaryTableDescription">
+     This method is used to say a sentence with voice settings.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setLanguage()" class="signatureLink">setLanguage</a>(lang:String):void</div><div class="summaryTableDescription">
+     This method is used to set the language for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setPitch()" class="signatureLink">setPitch</a>(pitch:Number):void</div><div class="summaryTableDescription">
+     This method is used to set the voice pitch for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setSpeed()" class="signatureLink">setSpeed</a>(speed:Number):void</div><div class="summaryTableDescription">
+     This method is used to set the voice speed for the next sentences.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#stop()" class="signatureLink">stop</a>():void</div><div class="summaryTableDescription">
+     This method is used to stop the TTS engine and discard other utterances in the queue.</div></td><td class="summaryTableOwnerCol">ezSpeech</td></tr></table></div><script language="javascript" type="text/javascript"><!--
 										showHideInherited();
 										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="debug"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">debug</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>debug:Boolean</code><p></p><p></p><p>
-		 Get/Set the debug state of <code>ezSpeech</code> instance.
-		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get debug():Boolean</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set debug(value:Boolean):void</code><br/></div><a name="propertyDetail"></a><a name="instance"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">instance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>instance:<a href="../../../com/fabricemontfort/air/ezSpeech.html">ezSpeech</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
-		 This method instanciate and return the current (and unique) instance of the <code>ezSpeech</code> class.
-		 
-		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get instance():<a href="../../../com/fabricemontfort/air/ezSpeech.html">ezSpeech</a></code><br/></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="ezSpeech()"></a><a name="ezSpeech(ezSpeech.as$6.SingletonEnforcer)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">ezSpeech</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function ezSpeech(enforcer:SingletonEnforcer)</code><p></p><p>
-		 This extension is based on a Singleton. 
-		 <p>To use it, please call <code>ezSpeech.instance();</code></p>
-		 
-		 </p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">enforcer</span>:SingletonEnforcer</code></td></tr></table><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
-		 <div class="listing" version="3.0"><pre>
-         var tts:ezSpeech = ezSpeech.instance();
-         
-         if (tts.isSupported())
-         {
-             tts.debug = true;
-         
-             tts.setSpeed(0.6);
-         
-             tts.setLanguage(languages.FR);
-         
-             tts.say("Bonjour");
-         }</pre></div>
-		 </div></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="forceLanguage()"></a><a name="forceLanguage(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">forceLanguage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function forceLanguage(lang:String):void</code><p></p><p></p><p>
-		 This method is EXPERIMENTAL and is used to set the language for the next sentences. 
-		 <p>If lang param is not available, it will dispatch an event</p>
-		 
-		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">lang</span>:String</code> &mdash; You can get a list of many language codes on this page :
-		 https://gist.github.com/jacobbubu/1836273
-		 
-		 </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
-		 <div class="listing" version="3.0"><pre>
-         tts.forceLanguage("he");
-         tts.say("שלום");
-         
-         tts.setLanguage("da_DK");
-         tts.say("Hej");</pre></div>
-		 </div></div><a name="isSpeaking()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isSpeaking</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isSpeaking():Boolean</code><p></p><p></p><p>
-		 This method is used to know if the TTS engine is currently speaking.
-		 
-		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if the TTS engine is speaking, <code>false</code> if not
-		 </td></tr></table></div><a name="isSupported()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isSupported</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isSupported():Boolean</code><p></p><p></p><p>
-		 This method is used to know if the TTS engine is available on the mobile device.
-		 
-		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if the TTS engine is available, <code>false</code> if not
-		 </td></tr></table></div><a name="say()"></a><a name="say(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">say</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function say(sentence:String):void</code><p></p><p></p><p>
-		 This method is used to say a sentence.
-		 
-		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">sentence</span>:String</code> &mdash; Must be a valid String
-		 
-		 </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
-		 <div class="listing" version="3.0"><pre>
-         var tts:ezSpeech = ezSpeech.instance();
-         
-         if (tts.isSupported())
-         {
-             tts.debug = true;
-         
-             tts.setSpeed(0.6);
-         
-             tts.setLanguage(languages.FR);
-         
-             tts.say("Bonjour");
-         }</pre></div>
-		 </div></div><a name="setLanguage()"></a><a name="setLanguage(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setLanguage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setLanguage(lang:String):void</code><p></p><p></p><p>
-		 This method is used to set the language for the next sentences. 
-		 <p>If lang param is not available, switch to default <code>languages.US</code></p>
-		 
-		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">lang</span>:String</code> &mdash; You can get a list of supported languages in com.fabricemontfort.ezspeech.languages
-		 
-		 </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
-		 <div class="listing" version="3.0"><pre>
+     Get/Set the debug state of <code>ezSpeech</code> instance.
+     </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get debug():Boolean</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set debug(value:Boolean):void</code><br/></div><a name="propertyDetail"></a><a name="instance"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">instance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>instance:<a href="../../../com/fabricemontfort/air/ezSpeech.html">ezSpeech</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+     This method instanciate and return the current (and unique) instance of the <code>ezSpeech</code> class.
+          </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get instance():<a href="../../../com/fabricemontfort/air/ezSpeech.html">ezSpeech</a></code><br/></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="ezSpeech()"></a><a name="ezSpeech(ezSpeech.as$7.SingletonEnforcer)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">ezSpeech</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function ezSpeech(enforcer:SingletonEnforcer)</code><p></p><p>
+     This extension is based on a Singleton.
+     <p>To use it, please call <code>ezSpeech.instance();</code></p>
+          </p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">enforcer</span>:SingletonEnforcer</code></td></tr></table><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     var tts:ezSpeech = ezSpeech.instance();
+     if (tts.isSupported())
+     {
+         tts.debug = true;
+         tts.setSpeed(0.6);
          tts.setLanguage(languages.FR);
          tts.say("Bonjour");
-         
-         tts.setLanguage(languages.US);
-         tts.say("Hello");
-         
-         tts.setLanguage(languages.DE);
-         tts.say("Hallo");
-         
-         tts.setLanguage(languages.ES);
-         tts.say("Hola");
-         
-         tts.setLanguage(languages.IT);
-         tts.say("Ciao");</pre></div>
-		 </div></div><a name="setPitch()"></a><a name="setPitch(Number)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setPitch</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setPitch(pitch:Number):void</code><p></p><p></p><p>
-		 This method is used to set the voice pitch for the next sentences. 
-		 <p>If pitch param is &lt; 0.5 or is > 1.5, then it doesn't change the current pitch</p>
-		 
-		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">pitch</span>:Number</code> &mdash; Must be comprise between 0.5 and 1.5
-		 
-		 </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
-		 <div class="listing" version="3.0"><pre>
-         tts.setPitch(0.5);
-         tts.say("Deep voice");
-         
-         tts.setPitch(1);
-         tts.say("Normal voice");
-         
-         tts.setSpeed(1.5);
-         tts.say("Acute voice");</pre></div>
-		 </div></div><a name="setSpeed()"></a><a name="setSpeed(Number)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setSpeed</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setSpeed(speed:Number):void</code><p></p><p></p><p>
-		 This method is used to set the voice speed for the next sentences. 
-		 <p>If speed param is &lt; 0 or is > 1, then it doesn't change the current speed</p>
-		 
-		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">speed</span>:Number</code> &mdash; Must be comprise between 0 and 1
-		 
-		 </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
-		 <div class="listing" version="3.0"><pre>
-         tts.setSpeed(0.2);
-         tts.say("Very slow");
-         
-         tts.setSpeed(0.8);
-         tts.say("Very speed");</pre></div>
-		 </div></div><a name="stop()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function stop():void</code><p></p><p></p><p>
-		 This method is used to stop the TTS engine and discard other utterances in the queue.
-		 
-		 </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Lundi Février 13 2017, 03:58 PM +04:00  </center></div></body></html><!--<br/>Lundi Février 13 2017, 03:58 PM +04:00  -->
+     }</pre></div>
+     </div></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="forceLanguage()"></a><a name="forceLanguage(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">forceLanguage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function forceLanguage(lang:String):void</code><p></p><p></p><p>
+     This method is EXPERIMENTAL and is used to set the language for the next sentences.
+     <p>If lang param is not available, it will dispatch an event</p>
+          </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">lang</span>:String</code> &mdash; You can get a list of many language codes on this page :
+     https://gist.github.com/jacobbubu/1836273
+          </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     tts.forceLanguage("he");
+     tts.say("שלום");
+     tts.forceLanguage("da_DK");
+     tts.say("Hej");</pre></div>
+     </div></div><a name="getAllVoices()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getAllVoices</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function getAllVoices():Array</code><p></p><p></p><p>
+     This method is used to get all voices installed on the device.
+     <p>If the device has no language installed, this function will thrown an error.</p>
+          </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Array</code> &mdash; This method returns an array of Voice (language, name, identifier)
+          </td></tr></table><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     var voices:Array = tts.getAllVoices();
+     tts.say("Deep voice");</pre></div>
+     </div></div><a name="isSpeaking()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isSpeaking</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isSpeaking():Boolean</code><p></p><p></p><p>
+     This method is used to know if the TTS engine is currently speaking.
+          </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if the TTS engine is speaking, <code>false</code> if not
+     </td></tr></table></div><a name="isSupported()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isSupported</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isSupported():Boolean</code><p></p><p></p><p>
+     This method is used to know if the TTS engine is available on the mobile device.
+          </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; <code>true</code> if the TTS engine is available, <code>false</code> if not
+     </td></tr></table></div><a name="say()"></a><a name="say(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">say</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function say(sentence:String):void</code><p></p><p></p><p>
+     This method is used to say a sentence.
+          </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">sentence</span>:String</code> &mdash; Must be a valid String
+          </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     var tts:ezSpeech = ezSpeech.instance();
+     if (tts.isSupported())
+     {
+         tts.debug = true;
+         tts.setSpeed(0.6);
+         tts.setLanguage(languages.FR);
+         tts.say("Bonjour");
+     }</pre></div>
+     </div></div><a name="sayWithVoiceParams()"></a><a name="sayWithVoiceParams(String,String,Number,Number,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sayWithVoiceParams</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function sayWithVoiceParams(sentence:String, identifier:String, speed:Number, pitch:Number, language:String):void</code><p></p><p></p><p>
+     This method is used to say a sentence with voice settings.
+          </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">sentence</span>:String</code> &mdash; Must be a valid String
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">identifier</span>:String</code> &mdash; Must be a valid String (Voice identifier) returned by getAllVoices()
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">speed</span>:Number</code> &mdash; Must be comprise between 0 and 1
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">pitch</span>:Number</code> &mdash; Must be comprise between 0.5 and 1.5
+     </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">language</span>:String</code> &mdash; You can get a list of supported languages in com.fabricemontfort.ezspeech.languages
+          </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     var vID_male:String = "com.apple.ttsbundle.Daniel-compact";
+     var vID_female:String = "com.apple.ttsbundle.Samantha-compact";
+     var speed:Number = 0.52;
+     var pitch:Number = 1.01;
+     var language:String = languages.US;
+     this.tts.sayWithVoiceParams("This is a test with a male voice", vID_male, speed, pitch, language);
+     this.tts.sayWithVoiceParams("This is a test with a female voice", vID_female, speed, pitch, language);</pre></div>
+     </div></div><a name="setLanguage()"></a><a name="setLanguage(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setLanguage</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setLanguage(lang:String):void</code><p></p><p></p><p>
+     This method is used to set the language for the next sentences.
+     <p>If lang param is not available, switch to default <code>languages.US</code></p>
+          </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">lang</span>:String</code> &mdash; You can get a list of supported languages in com.fabricemontfort.ezspeech.languages
+          </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     tts.setLanguage(languages.FR);
+     tts.say("Bonjour");
+     tts.setLanguage(languages.US);
+     tts.say("Hello");
+     tts.setLanguage(languages.DE);
+     tts.say("Hallo");
+     tts.setLanguage(languages.ES);
+     tts.say("Hola");
+     tts.setLanguage(languages.IT);
+     tts.say("Ciao");</pre></div>
+     </div></div><a name="setPitch()"></a><a name="setPitch(Number)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setPitch</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setPitch(pitch:Number):void</code><p></p><p></p><p>
+     This method is used to set the voice pitch for the next sentences.
+     <p>If pitch param is &lt; 0.5 or is > 1.5, then it doesn't change the current pitch</p>
+          </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">pitch</span>:Number</code> &mdash; Must be comprise between 0.5 and 1.5
+          </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     tts.setPitch(0.5);
+     tts.say("Deep voice");
+     tts.setPitch(1);
+     tts.say("Normal voice");
+     tts.setSpeed(1.5);
+     tts.say("Acute voice");</pre></div>
+     </div></div><a name="setSpeed()"></a><a name="setSpeed(Number)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setSpeed</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function setSpeed(speed:Number):void</code><p></p><p></p><p>
+     This method is used to set the voice speed for the next sentences.
+     <p>If speed param is &lt; 0 or is > 1, then it doesn't change the current speed</p>
+          </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">speed</span>:Number</code> &mdash; Must be comprise between 0 and 1
+          </td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">The following code shows you how to use this extension:
+     <div class="listing" version="3.0"><pre>
+     tts.setSpeed(0.2);
+     tts.say("Very slow");
+     tts.setSpeed(0.8);
+     tts.say("Very speed");</pre></div>
+     </div></div><a name="stop()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">stop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function stop():void</code><p></p><p></p><p>
+     This method is used to stop the TTS engine and discard other utterances in the queue.
+          </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Lundi Février 24 2020, 10:34 AM +04:00  </center></div></body></html><!--<br/>Lundi Février 24 2020, 10:34 AM +04:00  -->

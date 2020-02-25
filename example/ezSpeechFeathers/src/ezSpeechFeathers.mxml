@@ -1,0 +1,598 @@
+<?xml version="1.0"?>
+<f:Application xmlns:f="library://ns.feathersui.com/mxml"
+               xmlns:fx="http://ns.adobe.com/mxml/2009"
+               layout="{vL100}"
+               theme="feathers.themes.MetalWorksMobileTheme">
+
+    <fx:Script>
+        <![CDATA[
+        import feathers.controls.renderers.DefaultListItemRenderer;
+        import feathers.controls.renderers.IListItemRenderer;
+        import feathers.data.ArrayCollection;
+        import feathers.data.ListCollection;
+        import feathers.layout.HorizontalAlign;
+        import feathers.layout.VerticalAlign;
+
+        import com.fabricemontfort.air.ezSpeech;
+        import com.fabricemontfort.air.ezspeech.events;
+        import com.fabricemontfort.air.ezspeech.languages;
+
+        import flash.events.Event;
+
+        import starling.events.Event;
+
+        private var tts:ezSpeech;
+
+        [Bindable]
+        private var tts_speed:Number = 0.54;
+
+        [Bindable]
+        private var tts_pitch:Number = 1;
+
+        [Bindable]
+        private var ezspeech_state:String = "NOT TALKING";
+
+        override protected function initialize():void {
+            super.initialize();
+
+            tts = ezSpeech.instance;
+
+            this.tts.debug = true;
+            if (this.tts.isSupported()) {
+                this.tts.addEventListener(events.START, onUtteranceStart);
+                this.tts.addEventListener(events.DONE, onUtteranceDone);
+                this.tts.addEventListener(events.ERROR, onUtteranceError);
+                this.tts.addEventListener(events.INITIALIZED, onTTSInitialized);
+                this.tts.addEventListener(events.NOT_INITIALIZED, onTTSNotInitialized);
+            }
+        }
+
+        protected function frButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.FR);
+            if (this.tts.isSupported()) {
+                this.tts.say("Salut. Ceci est un exemple d'application pour démontrer la puissance de la parole. J'espère que vous aimerez !");
+            }
+            return;
+        }
+
+        protected function enButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.US);
+            if (this.tts.isSupported()) {
+                this.tts.say("Hello. This is a sample application to demonstrate the power of the speech. I hope that you'll like it!");
+            }
+            return;
+        }
+
+        protected function deButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.DE);
+            if (this.tts.isSupported()) {
+                this.tts.say("Hallo. Dies ist eine Beispielanwendung, die Macht der Sprache zu demonstrieren. Ich hoffe, dass Sie es finden mögen!");
+            }
+            return;
+        }
+
+        protected function esButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.ES);
+            if (this.tts.isSupported()) {
+                this.tts.say("Hola. Esta es una aplicación de ejemplo para demostrar el poder del discurso. Espero que te guste!");
+            }
+            return;
+        }
+
+        protected function itButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.IT);
+            if (this.tts.isSupported()) {
+                this.tts.say("Ciao. Questa è un'applicazione di esempio per dimostrare il potere del discorso. Spero che vi piacerà!");
+            }
+            return;
+        }
+
+        protected function zhButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.ZH);
+            if (this.tts.isSupported()) {
+                this.tts.say("你好。这是一个示例应用程序来演示说话的能力。我希望你会喜欢它！");
+            }
+            return;
+        }
+
+        protected function jaButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.JA);
+            if (this.tts.isSupported()) {
+                this.tts.say("こんにちは。これは、音声のパワーを実証するサンプル・アプリケーションです。私はあなたがそれを好むだろうことを願っています！");
+            }
+            return;
+        }
+
+        protected function ruButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.RU);
+            if (this.tts.isSupported()) {
+                this.tts.say("Здравствуйте. Это пример приложения, чтобы продемонстрировать силу речи. Я надеюсь, что вам понравится!");
+            }
+            return;
+        }
+
+        protected function koButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.KO);
+            if (this.tts.isSupported()) {
+                this.tts.say("여보세요. 이 연설의 힘을 보여주는 샘플 응용 프로그램입니다. 나는 당신이 그것을 좋아합니다 희망!");
+            }
+            return;
+        }
+
+        protected function ptButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.PT);
+            if (this.tts.isSupported()) {
+                this.tts.say("Olá. Esta é uma aplicação de exemplo para demonstrar o poder do discurso. Eu espero que você vai gostar!");
+            }
+            return;
+        }
+
+        protected function csButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.CS);
+            if (this.tts.isSupported()) {
+                this.tts.say("Ahoj. Toto je vzorová aplikace demonstrovat sílu projevu. Doufám, že se vám bude líbit!");
+            }
+            return;
+        }
+
+        protected function nlButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.NL);
+            if (this.tts.isSupported()) {
+                this.tts.say("Hallo. Dit is een voorbeeld applicatie om de kracht van de toespraak aan te tonen. Ik hoop dat het je bevalt!");
+            }
+            return;
+        }
+
+        protected function plButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.PL);
+            if (this.tts.isSupported()) {
+                this.tts.say("Cześć. To jest przykładowa aplikacja zademonstrować potęgę mowy. Mam nadzieję, że Ci się spodoba!");
+            }
+            return;
+        }
+
+        protected function svButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.SV);
+            if (this.tts.isSupported()) {
+                this.tts.say("Hallå. Detta är en exempelprogrammet för att demonstrera kraften i tal. Jag hoppas att du kommer att gilla det!");
+            }
+            return;
+        }
+
+        protected function trButton_clickHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.TR);
+            if (this.tts.isSupported()) {
+                this.tts.say("Merhaba. Bu konuşma gücünü göstermek için örnek bir uygulamadır. Ben bunu gibi olacak umuyoruz!");
+            }
+            return;
+        }
+
+        protected function heButton_clickHandler(event:starling.events.Event):void {
+            this.tts.forceLanguage("bn_BD");
+            if (this.tts.isSupported()) {
+                this.tts.say("হাই. এই বাক শক্তি প্রদর্শন করার জন্য একটি নমুনা অ্যাপ্লিকেশন. আমি আশা করি আপনি ভোগ!");
+            }
+            return;
+        }
+
+        protected function daButton_clickHandler(event:starling.events.Event):void {
+            this.tts.forceLanguage("da_DK");
+            if (this.tts.isSupported()) {
+                this.tts.say("Hej. Dette er en prøve, for at påvise talens. Jeg håber du nyder!");
+            }
+            return;
+        }
+
+        protected function arButton_clickHandler(event:starling.events.Event):void {
+            this.tts.forceLanguage("ar");
+            if (this.tts.isSupported()) {
+                this.tts.say("سلام. هذا هو تطبيق عينة لإثبات القدرة على الكلام. وآمل أن تستمتع!");
+            }
+            return;
+        }
+
+        protected function iwButton_clickHandler(event:starling.events.Event):void {
+            this.tts.forceLanguage("he");
+            if (this.tts.isSupported()) {
+                this.tts.say("היי. זהו יישום מדגם כדי להדגים את יכולת הדיבור. אני מקווה שאתה נהנה!");
+            }
+            return;
+        }
+
+        protected function swButton_clickHandler(event:starling.events.Event):void {
+            this.tts.forceLanguage("sw");
+            if (this.tts.isSupported()) {
+                this.tts.say("Hi. Hii ni maombi ya sampuli kuonyesha nguvu ya hotuba. Natumaini kufurahia!");
+            }
+            return;
+        }
+
+        protected function isSpeakingButton_clickHandler(event:starling.events.Event):void {
+            trace("TALKING : " + tts.isSpeaking());
+        }
+
+        protected function slowButton_clickHandler(event:starling.events.Event):void {
+            this.tts_speed = this.tts_speed - 0.01;
+            if (this.tts.isSupported()) {
+                this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+            }
+            return;
+        }
+
+        protected function fastButton_clickHandler(event:starling.events.Event):void {
+            this.tts_speed = this.tts_speed + 0.01;
+            if (this.tts.isSupported()) {
+                this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+            }
+            return;
+        }
+
+        protected function stopButton_clickHandler(event:starling.events.Event):void {
+            if (this.tts.isSupported()) {
+                tts.stop();
+            }
+        }
+
+        protected function onUtteranceStart(event:flash.events.Event):void {
+            ezspeech_state = "TALKING";
+        }
+
+        protected function onUtteranceDone(event:flash.events.Event):void {
+            ezspeech_state = "NOT TALKING";
+        }
+
+        protected function onUtteranceError(event:flash.events.Event):void {
+            trace("Unknown error with Utterance");
+        }
+
+        protected function onTTSInitialized(event:flash.events.Event):void {
+            if (tts.isSupported()) {
+                this.tts.setSpeed(Number(this.tts_speed.toFixed(2)));
+                this.tts.setPitch(Number(this.tts_pitch.toFixed(2)));
+                this.tts.setLanguage(languages.US);
+
+                // Initialize Voices ListPicker
+                var arr:Array = this.tts.getAllVoices();
+                chooseVoicePickerList.dataProvider = new ListCollection(arr);
+
+                this.tts.say("Let's go");
+            }
+        }
+
+        protected function onTTSNotInitialized(event:flash.events.Event):void {
+            trace("This device does not support TTS. An unknown error occured during initialization");
+        }
+
+        protected function deepButton_clickHandler(event:starling.events.Event):void {
+            this.tts_pitch = this.tts_pitch - 0.01;
+            if (this.tts.isSupported()) {
+                this.tts.setPitch(Number(this.tts_pitch.toFixed(2)));
+            }
+            return;
+        }
+
+        protected function acuteButton_clickHandler(event:starling.events.Event):void {
+            this.tts_pitch = this.tts_pitch + 0.01;
+            if (this.tts.isSupported()) {
+                this.tts.setPitch(Number(this.tts_pitch.toFixed(2)));
+            }
+            return;
+        }
+
+        private function testButton_triggeredHandler(event:starling.events.Event):void {
+            this.tts.setLanguage(languages.US);
+            if (this.tts.isSupported()) {
+                this.tts.say("Hello. This is a sample application to demonstrate the power of the speech. I hope that you'll like it!");
+            }
+        }
+
+        private function chooseVoicePickerList_labelFunc(item:Object):String {
+            return "[" + item.language + "] " + item.name + " (" + item.identifier + ")";
+        }
+
+        private function chooseVoicePickerList_itemRenderFactory():IListItemRenderer {
+            var itemRenderer:DefaultListItemRenderer = new DefaultListItemRenderer();
+            itemRenderer.labelFunction = chooseVoicePickerList_labelFunc;
+            return itemRenderer;
+        }
+
+        private function sayWithVoiceButton_triggeredHandler(event:starling.events.Event):void {
+            if (this.tts.isSupported()) {
+                if (this.chooseVoicePickerList.selectedIndex != -1) {
+                    var vID:String = chooseVoicePickerList.selectedItem.identifier;
+                    var vLang:String = chooseVoicePickerList.selectedItem.language;
+                    this.tts.sayWithVoiceParams(utteranceTextInput.text, vID, this.tts_speed, this.tts_pitch, vLang);
+                }
+            }
+        }
+
+        private function demoFRWithVoiceButton_triggeredHandler(event:starling.events.Event):void {
+
+            if (this.tts.isSupported()) {
+                var vID:String = "com.apple.ttsbundle.siri_female_fr-FR_compact";
+                var vID2:String = "com.apple.ttsbundle.siri_male_fr-FR_compact";
+                var speed:Number = 0.5;
+                var pitch:Number = 0.92;
+                var language:String = "fr_FR";
+
+                this.tts.sayWithVoiceParams("Et que veux-tu pendant ce temps que je fasse avec ma famille ?", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Tout ce qu’il te plaira.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("J’ai quatre pauvres petits enfants sur les bras.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Mets-les à terre.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Qui me demandent à toute heure, du pain.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Donne-leur le fouet.", vID2, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Quand j’ai bien bu et bien mangé, je veux que tout le monde soit saoul dans ma maison.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Et tu prétends, ivrogne, que les choses aillent toujours de même ?", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Ma femme, allons tout doucement, s’il vous plaît.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Que j’endure éternellement, tes insolences, et tes débauches ?", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Ne nous emportons point ma femme.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Et que je ne sache pas trouver le moyen de te rangé à ton devoir ?", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Ma femme, vous savez que je n’ai pas l’âme endurante, et que j’ai le bras assez bon.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Je me moque de tes menaces.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Ma petite femme, ma mie, votre peau vous démange, à votre ordinaire.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Je te montrerai bien que je ne te crains nullement.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Ma chère moitié, vous avez envie de me dérober quelque chose.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Crois-tu que je m’épouvante de tes paroles ?", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Doux objet de mes vœux, je vous frotterai les oreilles.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Ivrogne que tu es.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Je vous battrai.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Sac à vin.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Je vous rosserai.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Infâme.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Je vous étrillerai.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Traître!, insolent!, trompeur!, lâche!, coquin!, pendard!, gueux!, bélître!, fripon!, maraud!, voleur!", vID, speed * 1.02, pitch, language);
+                this.tts.sayWithVoiceParams("Ah ! vous en voulez, donc.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Ah, ah, ah, ah.", vID, speed / 100, pitch * 1.4, language);
+                this.tts.sayWithVoiceParams("Voilà le vrai moyen de vous apaiser!", vID2, speed, pitch, language);
+            }
+
+        }
+
+        private function demoENWithVoiceButton_triggeredHandler(event:starling.events.Event):void {
+
+            if (this.tts.isSupported()) {
+                var vID:String = "com.apple.ttsbundle.Daniel-compact";
+                var vID2:String = "com.apple.ttsbundle.Samantha-compact";
+                var speed:Number = 0.52;
+                var pitch:Number = 1.01;
+                var language:String = "en_US";
+
+                this.tts.sayWithVoiceParams("If I profane with my unworthiest hand", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("This holy shrine, the gentle fine is this:", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("My lips, two blushing pilgrims, ready stand", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("To smooth that rough touch with a tender kiss.", vID, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Good pilgrim, you do wrong your hand too much,", vID2, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Which mannerly devotion shows in this;", vID2, speed, pitch, language);
+                this.tts.sayWithVoiceParams("For saints have hands that pilgrims' hands do touch,", vID2, speed, pitch, language);
+                this.tts.sayWithVoiceParams("To smooth that rough touch with a tender kiss.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Have not saints lips, and holy palmers too?", vID, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Ay, pilgrim, lips that they must use in prayer.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("O, then, dear saint, let lips do what hands do;", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("They pray, grant thou, lest faith turn to despair.", vID, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Saints do not move, though grant for prayers' sake.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Then move not, while my prayer's effect I take.", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Thus from my lips, by yours, my sin is purged.", vID, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Then have my lips the sin that they have took.", vID2, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("Sin from thy lips? O trespass sweetly urged!", vID, speed, pitch, language);
+                this.tts.sayWithVoiceParams("Give me my sin again.", vID, speed, pitch, language);
+
+                this.tts.sayWithVoiceParams("You kiss by the book.", vID2, speed, pitch, language);
+            }
+
+        }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <f:VerticalLayout id="vL100"
+                          padding="10"
+                          gap="7"
+                          verticalAlign="{VerticalAlign.TOP}"
+                          horizontalAlign="{HorizontalAlign.CENTER}"/>
+
+        <f:VerticalLayoutData id="vLD100"
+                              percentWidth="100"/>
+
+        <f:VerticalLayout id="vL100Max"
+                          padding="0"
+                          gap="3"
+                          verticalAlign="{VerticalAlign.TOP}"
+                          horizontalAlign="{HorizontalAlign.CENTER}"/>
+
+        <f:VerticalLayoutData id="vLD100Max"
+                              percentHeight="100"
+                              percentWidth="100"/>
+
+        <f:VerticalLayoutData id="vLD100Auto"
+                              percentWidth="100"/>
+
+        <f:HorizontalLayout id="hL100"
+                            gap="7"
+                            verticalAlign="{VerticalAlign.MIDDLE}"
+                            horizontalAlign="{HorizontalAlign.CENTER}"/>
+
+        <f:HorizontalLayoutData id="hLD50"
+                                percentWidth="50"/>
+
+    </fx:Declarations>
+
+    <f:ScrollContainer layoutData="{vLD100Max}" layout="{vL100Max}">
+        <f:Label text="ezSpeech Demo"
+                 paddingBottom="10"
+                 paddingTop="10"/>
+
+        <f:Button id="isSpeakingButton"
+                  label="? Talking ?"
+                  layoutData="{vLD100}"
+                  triggered="isSpeakingButton_clickHandler(event)"/>
+
+        <f:Button id="stopButton"
+                  label="STOP UTTERANCE"
+                  layoutData="{vLD100}"
+                  triggered="stopButton_clickHandler(event)"/>
+
+        <f:Label text="UTTERANCE" paddingBottom="0" paddingTop="10"/>
+
+        <f:TextInput id="utteranceTextInput"
+                     text="Le Médecin malgré lui. Acte 1, scène 1"
+                     layoutData="{vLD100}"/>
+
+        <f:PickerList id="chooseVoicePickerList"
+                      itemRendererFactory="chooseVoicePickerList_itemRenderFactory"
+                      labelFunction="chooseVoicePickerList_labelFunc"
+                      layoutData="{vLD100}"/>
+
+        <f:Button id="sayWithVoiceButton"
+                  label="Say With Voice Params"
+                  triggered="sayWithVoiceButton_triggeredHandler(event)"
+                  layoutData="{vLD100}"/>
+
+        <f:Button id="demoFRWithVoiceButton"
+                  label="Demonstration FR"
+                  triggered="demoFRWithVoiceButton_triggeredHandler(event)"
+                  layoutData="{vLD100}"/>
+
+        <f:Button id="demoENWithVoiceButton"
+                  label="Demonstration EN"
+                  triggered="demoENWithVoiceButton_triggeredHandler(event)"
+                  layoutData="{vLD100}"/>
+
+        <f:Label text="SPEED" paddingBottom="0" paddingTop="10"/>
+
+        <f:LayoutGroup layoutData="{vLD100}"
+                       layout="{hL100}">
+            <f:Button id="slowButton"
+                      label="- 0.01 -"
+                      triggered="slowButton_clickHandler(event)"
+                      layoutData="{hLD50}"/>
+            <f:Label text="{tts_speed.toFixed(2)}" />
+            <f:Button id="fastButton"
+                      label="+ 0.01 +"
+                      triggered="fastButton_clickHandler(event)"
+                      layoutData="{hLD50}"/>
+        </f:LayoutGroup>
+
+        <f:Label text="PITCH" paddingBottom="0" paddingTop="10"/>
+
+        <f:LayoutGroup layoutData="{vLD100}"
+                       layout="{hL100}">
+            <f:Button id="deepButton"
+                      label="- 0.01 -"
+                      layoutData="{hLD50}"
+                      triggered="deepButton_clickHandler(event)"/>
+            <f:Label text="{tts_pitch.toFixed(2)}"/>
+            <f:Button id="acuteButton"
+                      label="+ 0.01 +"
+                      layoutData="{hLD50}"
+                      triggered="acuteButton_clickHandler(event)"/>
+        </f:LayoutGroup>
+
+        <f:Label text="{ezspeech_state}" paddingBottom="10" paddingTop="10"/>
+
+        <f:LayoutGroup layoutData="{vLD100Auto}" layout="{vL100Max}">
+            <f:Button id="frButton"
+                      label="French"
+                      layoutData="{vLD100}"
+                      triggered="frButton_clickHandler(event)"/>
+            <f:Button id="enButton"
+                      label="English"
+                      layoutData="{vLD100}"
+                      triggered="enButton_clickHandler(event)"/>
+            <f:Button id="deButton"
+                      label="German"
+                      layoutData="{vLD100}"
+                      triggered="deButton_clickHandler(event)"/>
+            <f:Button id="esButton"
+                      label="Spanish"
+                      layoutData="{vLD100}"
+                      triggered="esButton_clickHandler(event)"/>
+            <f:Button id="itButton"
+                      label="Italian"
+                      layoutData="{vLD100}"
+                      triggered="itButton_clickHandler(event)"/>
+            <f:Button id="zhButton"
+                      label="Chinese"
+                      layoutData="{vLD100}"
+                      triggered="zhButton_clickHandler(event)"/>
+            <f:Button id="jaButton"
+                      label="Japanese"
+                      layoutData="{vLD100}"
+                      triggered="jaButton_clickHandler(event)"/>
+            <f:Button id="ruButton"
+                      label="Russian"
+                      layoutData="{vLD100}"
+                      triggered="ruButton_clickHandler(event)"/>
+            <f:Button id="koButton"
+                      label="Korean"
+                      layoutData="{vLD100}"
+                      triggered="koButton_clickHandler(event)"/>
+            <f:Button id="ptButton"
+                      label="Portuguese"
+                      layoutData="{vLD100}"
+                      triggered="ptButton_clickHandler(event)"/>
+            <f:Button id="csButton"
+                      label="Czech"
+                      layoutData="{vLD100}"
+                      triggered="csButton_clickHandler(event)"/>
+            <f:Button id="nlButton"
+                      label="Dutch"
+                      layoutData="{vLD100}"
+                      triggered="nlButton_clickHandler(event)"/>
+            <f:Button id="plButton"
+                      label="Polish"
+                      layoutData="{vLD100}"
+                      triggered="plButton_clickHandler(event)"/>
+            <f:Button id="svButton"
+                      label="Swedish"
+                      layoutData="{vLD100}"
+                      triggered="svButton_clickHandler(event)"/>
+            <f:Button id="trButton"
+                      label="Turkish"
+                      layoutData="{vLD100}"
+                      triggered="trButton_clickHandler(event)"/>
+            <f:Button id="heButton"
+                      label="Bengali (Experimental)"
+                      layoutData="{vLD100}"
+                      triggered="heButton_clickHandler(event)"/>
+            <f:Button id="daButton"
+                      label="Danish (Experimental)"
+                      layoutData="{vLD100}"
+                      triggered="daButton_clickHandler(event)"/>
+            <f:Button id="arButton"
+                      label="Arabic (Experimental)"
+                      layoutData="{vLD100}"
+                      triggered="arButton_clickHandler(event)"/>
+            <f:Button id="iwButton"
+                      label="Hebrew (Experimental)"
+                      layoutData="{vLD100}"
+                      triggered="iwButton_clickHandler(event)"/>
+            <f:Button id="swButton"
+                      label="Swahili (Experimental)"
+                      layoutData="{vLD100}"
+                      triggered="swButton_clickHandler(event)"/>
+        </f:LayoutGroup>
+
+    </f:ScrollContainer>
+
+</f:Application>
